@@ -59,7 +59,7 @@ return [
       | transport layer security protocol should provide great security.
       |
      */
-    'encryption' => 'none',
+    'encryption' => 'null',
     /*
       |--------------------------------------------------------------------------
       | SMTP Server Username
