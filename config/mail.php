@@ -26,7 +26,7 @@ return [
       | the Mailgun mail service which will provide reliable deliveries.
       |
      */
-    'host' => env('MAIL_ADDR', 'mail.mtalk.net.mm'),
+    'host' => env('MAIL_HOST', 'mail.mtalk.net.mm'),
     /*
       |--------------------------------------------------------------------------
       | SMTP Host Port
