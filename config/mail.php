@@ -26,7 +26,7 @@ return [
       | the Mailgun mail service which will provide reliable deliveries.
       |
      */
-    'host' => '203.81.168.58',
+    'host' => env('MAIL_ADDR', 'mail.mtalk.net.mm'),
     /*
       |--------------------------------------------------------------------------
       | SMTP Host Port
@@ -48,7 +48,7 @@ return [
       | used globally for all e-mails that are sent by your application.
       |
      */
-    'from' => ['address' => '', 'name' => ''],
+    'from' => ['address' => env('MAIL_ADDR'), 'name' => env('MAIL_NAME')],
     /*
       |--------------------------------------------------------------------------
       | E-Mail Encryption Protocol
@@ -59,7 +59,7 @@ return [
       | transport layer security protocol should provide great security.
       |
      */
-    'encryption' => '',
+    'encryption' => 'none',
     /*
       |--------------------------------------------------------------------------
       | SMTP Server Username
@@ -70,7 +70,7 @@ return [
       | connection. You may also set the "password" value below this one.
       |
      */
-    'username' => '',
+    'username' => env('MAIL_ADDR'),
     /*
       |--------------------------------------------------------------------------
       | SMTP Server Password
@@ -81,7 +81,7 @@ return [
       | connection so that the application will be able to send messages.
       |
      */
-    'password' => '',
+    'password' => env('MAIL_PASS'),
     /*
       |--------------------------------------------------------------------------
       | Sendmail System Path
@@ -92,7 +92,6 @@ return [
       | been provided here, which will work well on most of your systems.
       |
      */
-    'sendmail' => '',
     /*
       |--------------------------------------------------------------------------
       | Mail "Pretend"
