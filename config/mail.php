@@ -37,7 +37,7 @@ return [
       | stay compatible with the Mailgun e-mail application by default.
       |
      */
-    'port' => '25',
+    'port' => env('MAIL_PORT'),
     /*
       |--------------------------------------------------------------------------
       | Global "From" Address
@@ -59,7 +59,7 @@ return [
       | transport layer security protocol should provide great security.
       |
      */
-    'encryption' => 'null',
+    'encryption' => env('MAIL_ENCR'),
     /*
       |--------------------------------------------------------------------------
       | SMTP Server Username
