@@ -36,11 +36,14 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     // register page
-    Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
-    Breadcrumbs::register('auth.register', function ($breadcrumbs) {
-        $breadcrumbs->parent('/');
-        $breadcrumbs->push('Login', url('auth/login'));
-        $breadcrumbs->push('Create Account', url('auth/register'));
+    // Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
+    // Breadcrumbs::register('auth.register', function ($breadcrumbs) {
+    //     $breadcrumbs->parent('/');
+    //     $breadcrumbs->push('Login', url('auth/login'));
+    //     $breadcrumbs->push('Create Account', url('auth/register'));
+    // });
+    Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', function() {
+        return redirect('auth/login')->with('error', 'Registeration is not allowed');
     });
 
     // Auth login
