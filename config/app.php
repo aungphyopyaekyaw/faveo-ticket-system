@@ -134,11 +134,10 @@ return [
     'providers' => [
 
         'Illuminate\Broadcasting\BroadcastServiceProvider',
-        'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         /*
          * Laravel Framework Service Providers...
          */
-
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Bus\BusServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
@@ -180,7 +179,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
         LaravelFCM\FCMServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Bus\BusServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
@@ -244,12 +242,11 @@ return [
         'Zipper'      => 'Chumper\Zipper\Zipper',
         'JWTAuth'     => 'Tymon\JWTAuth\Facades\JWTAuth',
         'JWTFactory'  => 'Tymon\JWTAuth\Facades\JWTFactory',
-        'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'GeoIP'       => \Torann\GeoIP\Facades\GeoIP::class,
         'Image'       => Intervention\Image\Facades\Image::class,
         'FCM'         => LaravelFCM\Facades\FCM::class,
         'FCMGroup'    => LaravelFCM\Facades\FCMGroup::class,
-        'Debugbar'    => Barryvdh\Debugbar\Facade::class,
         'Excel'       => Maatwebsite\Excel\Facades\Excel::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
         'UnAuth'      => 'App\Http\Controllers\Client\helpdesk\UnAuthController',
