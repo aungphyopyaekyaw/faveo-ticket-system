@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Common\PhpMailController;
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -10,6 +10,30 @@
   | and give it the controller to call when that URI is requested.
   |
  */
+Route::get('/testmail', function() {
+    $mailCtl = new PhpMailController;
+    try {
+        $mailCtl->sendmail(
+            $from = 1,
+            $to = ['name' => 'support@mtg.com.mm', 'email' => 'support@mtg.com.mm'],
+            $message = [
+                'subject'     => 'Test mail',
+                'body'        => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+                'scenario'    => 'ticket-reply',
+                'attachments' => null,
+            ],
+            $template_variables = [
+                'ticket_number' => '111-222-333',
+                'user'          => 'support@mtg.com.mm',
+                'agent_sign'    => 'support@mtg.com.mm',
+                'system_link'   => 'nothing',
+            ]
+        );
+    }   catch (\Exception $e) {
+        $result = ['fails' => $e->getMessage()];
+        dd($e);
+    }
+});
 Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'update', 'middleware' => 'install'], function () {
         Route::controllers([
