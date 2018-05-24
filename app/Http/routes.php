@@ -10,32 +10,32 @@ use App\Http\Controllers\Common\PhpMailController;
   | and give it the controller to call when that URI is requested.
   |
  */
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/testmail', function() {
-        $mailCtl = new PhpMailController;
-        try {
-            $mailCtl->sendmail(
-                $from = 1,
-                $to = ['name' => 'support@mtg.com.mm', 'email' => 'support@mtg.com.mm'],
-                $message = [
-                    'subject'     => 'Test mail',
-                    'body'        => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
-                    'scenario'    => 'ticket-reply',
-                    'attachments' => null,
-                ],
-                $template_variables = [
-                    'ticket_number' => '111-222-333',
-                    'user'          => 'support@mtg.com.mm',
-                    'agent_sign'    => 'support@mtg.com.mm',
-                    'system_link'   => 'nothing',
-                ]
-            );
-        }   catch (\Exception $e) {
-            $result = ['fails' => $e->getMessage()];
-            dd($e);
-        }
-    });
-});
+// Route::group(['middleware' => 'auth'], function() {
+//     Route::get('/testmail', function() {
+//         $mailCtl = new PhpMailController;
+//         try {
+//             $mailCtl->sendmail(
+//                 $from = 1,
+//                 $to = ['name' => 'support@mtg.com.mm', 'email' => 'support@mtg.com.mm'],
+//                 $message = [
+//                     'subject'     => 'Test mail',
+//                     'body'        => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+//                     'scenario'    => 'ticket-reply',
+//                     'attachments' => null,
+//                 ],
+//                 $template_variables = [
+//                     'ticket_number' => '111-222-333',
+//                     'user'          => 'support@mtg.com.mm',
+//                     'agent_sign'    => 'support@mtg.com.mm',
+//                     'system_link'   => 'nothing',
+//                 ]
+//             );
+//         }   catch (\Exception $e) {
+//             $result = ['fails' => $e->getMessage()];
+//             dd($e);
+//         }
+//     });
+// });
 Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'update', 'middleware' => 'install'], function () {
         Route::controllers([
@@ -62,15 +62,15 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     // register page
-    // Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
-    // Breadcrumbs::register('auth.register', function ($breadcrumbs) {
-    //     $breadcrumbs->parent('/');
-    //     $breadcrumbs->push('Login', url('auth/login'));
-    //     $breadcrumbs->push('Create Account', url('auth/register'));
-    // });
-    Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', function() {
-        return redirect('auth/login')->with('error', 'Registeration is not allowed');
+    Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
+    Breadcrumbs::register('auth.register', function ($breadcrumbs) {
+        $breadcrumbs->parent('/');
+        $breadcrumbs->push('Login', url('auth/login'));
+        $breadcrumbs->push('Create Account', url('auth/register'));
     });
+    // Route::get('auth/register/{one?}/{two?}/{three?}/{four?}/{five?}', function() {
+    //     return redirect('auth/login')->with('error', 'Registeration is not allowed');
+    // });
 
     // Auth login
     Route::get('auth/login/{one?}/{two?}/{three?}/{four?}/{five?}', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@getLogin']);

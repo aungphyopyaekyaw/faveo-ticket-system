@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" ng-app="myApp">
-        <title>MTG | HELP DESK</title>
+        <title>HELP DESK</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="_token" content="{!! csrf_token() !!}"/>
         <!-- faveo favicon -->
@@ -60,7 +60,7 @@
     <body class="skin-blue fixed">
         <div class="wrapper">
             <header class="main-header">
-                <a href="#" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png')}}" width="100px;"></a>
+                <a href="/dashboard" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png')}}" width="100px;"></a>
                 <?php
                 $replacetop = \Event::fire('service.desk.agent.topbar.replace', array());
 

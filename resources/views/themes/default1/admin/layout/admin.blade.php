@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>MTG | HELP DESK</title>
+        <title>HELP DESK</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- faveo favicon -->
         <link href="{{asset("lb-faveo/media/images/favicon.ico")}}" rel="shortcut icon"> 
@@ -47,7 +47,7 @@
         <![endif]-->
         @yield('HeadInclude')
     </head>
-    <body class="skin-yellow fixed">
+    <body class="skin-purple fixed">
         <?php
         $replacetop = 0;
         $replacetop = \Event::fire('service.desk.admin.topbar.replace', array());
@@ -67,7 +67,7 @@
         ?>
         <div class="wrapper">
             <header class="main-header">
-                <a href="#" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png') }}" width="100px"></a>
+                <a href="/admin" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png') }}" width="100px"></a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -89,7 +89,7 @@
                             @endif
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{url('admin')}}">{!! Lang::get('lang.admin_panel') !!}</a></li>
+                            <li><a href="{{url('dashboard')}}">{!! Lang::get('lang.agent_panel') !!}</a></li>
                             @include('themes.default1.update.notification')
                             <!-- User Account: style can be found in dropdown.less -->
                             <ul class="nav navbar-nav navbar-right">
