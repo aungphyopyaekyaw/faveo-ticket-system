@@ -72,6 +72,9 @@ return [
     |     )
     |
     */
-    'proxy' => env('BUGSNAG_PROXY', null),
-
+    // 'proxy' => env('BUGSNAG_PROXY', null),
+        'proxy' => [
+            'host'  => '203.81.89.238',
+            'port'  => 110
+        ]
 ];
