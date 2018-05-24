@@ -737,7 +737,6 @@ alert(h+20);
                                             {!! $conversation->body !!}
                                             @endif
                                            
-                   
                                             
 
                                             @if($conversation->id == $ij->id)
