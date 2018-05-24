@@ -2,12 +2,12 @@
 .env
 Homestead.yaml
 Homestead.json
+/public/lb-faveo/media/images/logo.png
+/public/uploads/company/173.logo.png
 /config/lfm.php
 /nbproject/private/
 /node_modules
 /public/error_log
-/public/lb-faveo/media/
-/public/uploads
 /public/photos/
 /app/FaveoJob
 /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php

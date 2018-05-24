@@ -60,7 +60,7 @@
     <body class="skin-blue fixed">
         <div class="wrapper">
             <header class="main-header">
-                <a href="/dashboard" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png')}}" width="100px;"></a>
+                <a href="/dashboard" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png')}}"></a>
                 <?php
                 $replacetop = \Event::fire('service.desk.agent.topbar.replace', array());
 
