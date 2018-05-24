@@ -235,7 +235,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> {{$settings->version}}
                 </div>
-                <strong>Copyright &copy; {{date("Y")}} <a href="{{$settings->website}}"> {{$settings->company_name}}</a>.  Powered By <a href="http://www.faveohelpdesk.com">Faveo</a>.</strong>
+                <strong>Copyright &copy; {{date("Y")}} <a href="{{$settings->website}}"> {{$settings->company_name}}</a>.
             </footer>
         </div><!-- ./wrapper -->
 

@@ -21,7 +21,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Faveo</b> HELP DESK</a>
+        <a href="{{asset('/auth/register')}}"><b>Faveo</b> HELP DESK</a>
       </div><!-- /.login-logo -->
 
        @yield('body')
