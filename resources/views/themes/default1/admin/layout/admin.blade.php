@@ -67,7 +67,7 @@
         ?>
         <div class="wrapper">
             <header class="main-header">
-                <a href="/admin" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png') }}" width="100px"></a>
+                <a href="/admin" class="logo"><img src="{{ asset('lb-faveo/media/images/logo.png') }}"></a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
