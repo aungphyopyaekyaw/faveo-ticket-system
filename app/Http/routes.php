@@ -36,6 +36,7 @@ use App\Http\Controllers\Common\PhpMailController;
 //         }
 //     });
 // });
+Route::get('/testform', '\App\Http\Controllers\Client\helpdesk\FormController@getCustomForm');
 Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'update', 'middleware' => 'install'], function () {
         Route::controllers([

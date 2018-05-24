@@ -266,7 +266,7 @@ alert(h+20);
                                             
                     @if($conversation->id == $ij->id)
                     <?php $ticket_form_datas = App\Model\helpdesk\Ticket\Ticket_Form_Data::where('ticket_id', '=', $tickets->id)->get(); 
-                    ?>
+                    /* dd($ticket_form_datas); */?>
                     @if(isset($ticket_form_datas))
 
                     <br/>

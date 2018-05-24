@@ -571,6 +571,7 @@ class FormController extends Controller
         $checkbox = '';
         $html = '';
         $values = $field->values()->lists('field_value')->toArray();
+        #appk
         if (count($values) > 0) {
             $i = 1;
             foreach ($values as $field_value) {
